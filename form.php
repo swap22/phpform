@@ -1,3 +1,18 @@
+<?php
+
+if(isset($_POST['Submit'])){
+    if(empty($_POST['Name'])){
+        echo "name is required";
+    }
+
+}
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
