@@ -9,6 +9,10 @@ if(isset($_POST['Submit'])){
     }else{
         // post variable assign value to name or other variable
         $Name=assign($_POST['Name']);
+        // check Name only contains letters and whitespace
+        if(!preg_match("/^[A-Za-z\. ]*$/",$Name)){
+        $error_name="Only Letters and white sapace are allowed";
+        }
     }
 
     if(empty($_POST['Email'])){
@@ -16,6 +20,12 @@ if(isset($_POST['Submit'])){
     }else{
         // post variable assign value to Email or other variable
         $Email=assign($_POST['Email']);
+        // check if e-mail address syntax is valid or not
+        if(!preg_match("/[a-zA-Z0-9._-]{3,}@[a-zA-Z0-9._-]{3,}[.]{1}[a-zA-Z0-9._-]{2,}/",$Email))
+        {
+        $error_email="Invalid Email Format";
+        }
+
     }
 
     if(empty($_POST['Gender'])){
@@ -30,6 +40,11 @@ if(isset($_POST['Submit'])){
     }else{
         // post variable assign value to Email or other variable
         $Website=assign($_POST['Website']);
+         // check Website address syntax is valid or not
+        if(!preg_match("/(https:|ftp:)\/\/+[a-zA-Z0-9.\-_\/?\$=&\#\~`!]+\.[a-zA-Z0-9.\-_\/?\$=&\#\~`!]*/",$Website)){
+        $error_Website="Invalid Webside Address Format";	
+        }
+
     }
 }
 // function just return value it receive
