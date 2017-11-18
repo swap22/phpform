@@ -47,12 +47,15 @@ if(isset($_POST['Submit'])){
 
     }
     if(!empty($_POST["Name"])&&!empty($_POST["Email"])&&!empty($_POST["Gender"])&&!empty($_POST["Website"])){
-    echo "<h2>Your Submit Information</h2> <br>";
-    echo "Name:".ucwords ($Name)."<br>";
-    echo "Email: {$Email}<br>";
-    echo "Gender: {$Gender}<br>";
-    echo "Website: $Website<br>";
-    echo "Comments: {$_POST["Comment"]}<br>";
+    if((preg_match("/^[A-Za-z\. ]*$/",$Name)==true)&&(preg_match("/[a-zA-Z0-9._-]{3,}@[a-zA-Z0-9._-]{3,}[.]{1}[a-zA-Z0-9._-]{2,}/",$Email)==true)&&(preg_match("/(https:|ftp:)\/\/+[a-zA-Z0-9.\-_\/?\$=&\#\~`!]+\.[a-zA-Z0-9.\-_\/?\$=&\#\~`!]*/",$Website)==true))
+        {
+        echo "<h2>Your Submit Information</h2> <br>";
+        echo "Name:".ucwords ($Name)."<br>";
+        echo "Email: {$Email}<br>";
+        echo "Gender: {$Gender}<br>";
+        echo "Website: $Website<br>";
+        echo "Comments: {$_POST["Comment"]}<br>";
+        }
     }
 }
 // function just return value it receive
