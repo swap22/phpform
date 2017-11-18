@@ -46,6 +46,13 @@ if(isset($_POST['Submit'])){
         }
 
     }
+    echo "<h2>Your Submit Information</h2> <br>";
+    echo "Name:".ucwords ($Name)."<br>";
+    echo "Email: {$Email}<br>";
+    echo "Gender: {$Gender}<br>";
+    echo "Website: $Website<br>";
+    echo "Comments: {$_POST["Comment"]}<br>";
+
 }
 // function just return value it receive
 function assign($inp){
