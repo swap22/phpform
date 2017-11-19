@@ -79,6 +79,20 @@ function assign($inp){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Basic Form</title>
+
+    <style type="text/css">
+    input[type="text"], input[type="email"],textarea{
+        border: 1px solid black;
+        background-color: rgb(221,216,212);
+        width: 600px;
+        padding: .5em;
+        font-size: 1.0em;
+        } 
+        .error{
+            color: red;
+        }
+    
+    </style>
 </head>
 <body>
     <form action="form.php" method="post">
@@ -86,20 +100,20 @@ function assign($inp){
             <fieldset><legend>* Please Fill Out the following Fields.</legend>
                 Name:<br>
                 <input class="input" type="text"  Name="Name" placeholder="write your name">
-                <?php echo "$error_name"; ?>
+            <span class="error"><?php echo "$error_name"; ?></span>
                 <br>	 
                 E-mail:<br>
                 <input class="input" type="email"  Name="Email" placeholder="write your Email">
-                <?php echo "$error_email"; ?>
+                <span class="error"><?php echo "$error_email"; ?></span>
                 <br>
                 Gender:<br>
                 <input class="radio" type="radio" Name="Gender" value="Female">Female
                 <input class="radio" type="radio" Name="Gender" value="Male">Male 
-                <?php echo "   $error_Gender"; ?>
+                <span class="error"><?php echo "   $error_Gender"; ?></span>
                 <br>		   
                 Website:<br>
                 <input class="input" type="text"  Name="Website" placeholder="write your website address">
-                <?php echo "$error_Website"; ?>
+                <span class="error"><?php echo "$error_Website"; ?></span>
                 <br>
                 Comment:<br>
                 <textarea Name="Comment" rows="5" cols="35"></textarea>
