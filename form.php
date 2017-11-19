@@ -56,6 +56,9 @@ if(isset($_POST['Submit'])){
         echo "Website: $Website<br>";
         echo "Comments: {$_POST["Comment"]}<br>";
         }
+        else{
+            echo '<span class="Error">* Please Complete & Correct your Form & Try Again *</span>';
+        }
     }
 }
 // function just return value it receive
